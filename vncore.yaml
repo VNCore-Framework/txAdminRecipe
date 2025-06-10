@@ -87,9 +87,6 @@ tasks:
     ref: main
     src: https://github.com/VNCore-Framework/hospital_map
 
-  - action: waste_time # prevent github throttling
-    seconds: 10
-
   # Downloading VNCore resources
   - action: download_github
     dest: ./resources/[vncore]/vn-core
