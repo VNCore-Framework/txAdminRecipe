@@ -94,7 +94,7 @@ tasks:
   - action: download_github
     dest: ./resources/[vncore]/vn-core
     ref: main
-    src: https://github.com/VNCore-Framework/vncore
+    src: https://github.com/VNCore-Framework/vn-core
 
   - action: waste_time # prevent github throttling
     seconds: 10
