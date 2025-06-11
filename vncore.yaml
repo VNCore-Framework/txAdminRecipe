@@ -37,7 +37,7 @@ tasks:
     path: ./tmp/files/oxmysql.zip
     url: https://github.com/overextended/oxmysql/releases/download/v2.12.0/oxmysql.zip
   - action: unzip
-    dest: ./resources/[standalone]
+    dest: ./resources/[ox]
     src: ./tmp/files/oxmysql.zip
 
   - action: download_file
@@ -94,10 +94,17 @@ tasks:
     src: https://github.com/VNCore-Framework/vn-core
 
   - action: download_file
+    path: ./tmp/files/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/download/v3.30.6/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_lib.zip
+
+  - action: download_file
     path: ./tmp/files/ox_inventory.zip
     url: https://github.com/VNCore-Framework/ox_inventory/releases/download/v1.0.1/ox_inventory.zip
   - action: unzip
-    dest: ./resources/[vncore]
+    dest: ./resources/[ox]
     src: ./tmp/files/ox_inventory.zip
     
   - action: waste_time # prevent github throttling
