@@ -1,16 +1,17 @@
 CREATE TABLE IF NOT EXISTS `ox_inventory` (
-  `owner` varchar(60) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `data` longtext COLLATE utf8mb4_general_ci,
+  `owner` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `lastupdated` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   UNIQUE KEY `owner` (`owner`,`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS `vn_users` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `identifier` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `identifier` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',
   `accounts` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `roles` longtext COLLATE utf8mb4_general_ci,
   `metadata` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `inventory` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `position` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
@@ -20,13 +21,13 @@ CREATE TABLE IF NOT EXISTS `vn_users` (
   PRIMARY KEY (`id`),
   KEY `id` (`id`),
   KEY `identifier` (`identifier`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 CREATE TABLE IF NOT EXISTS `vn_vehicles` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `plate` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `glovebox` longtext COLLATE utf8mb4_general_ci,
-  `trunk` longtext COLLATE utf8mb4_general_ci,
+  `plate` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `glovebox` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `trunk` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
