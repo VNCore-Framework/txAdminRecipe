@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `vn_users` (
   KEY `identifier` (`identifier`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE IF NOT EXISTS `vehicles` (
+CREATE TABLE IF NOT EXISTS `vn_vehicles` (
   `id` int NOT NULL AUTO_INCREMENT,
   `plate` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `glovebox` longtext COLLATE utf8mb4_general_ci,
